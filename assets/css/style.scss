@@ -6,23 +6,28 @@
 /* ===== GLOBAL ===== */
 
 body {
-    background-color: #0f1110;
+    background: linear-gradient(
+        180deg,
+        #0d0f0e 0%,
+        #111614 100%
+    );
+
     color: #e6e6e6;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                 Helvetica, Arial, sans-serif;
-    line-height: 1.7;
 }
+
+--accent: #3cb371;
+--accent-light: #69d28c;
+--card-bg: #161b18;
+--text-muted: #a7b3ac;
 
 .page-content {
     max-width: 1050px;
     margin: auto;
 }
-
 a {
     color: #49b675;
     text-decoration: none;
 }
-
 a:hover {
     color: #6fd998;
 }
@@ -32,6 +37,12 @@ a:hover {
 .hero {
     text-align: center;
     padding: 60px 20px;
+}
+
+.hero-location {
+    color: #8fa89b;
+    font-size: 1rem;
+    margin-bottom: 20px;
 }
 
 .hero h1 {
@@ -81,19 +92,27 @@ a:hover {
     color: #0f1110;
 }
 
+.btn-primary {
+    background: #49b675;
+    color: #0f1110;
+    font-weight: 600;
+}
+
 /* ===== PROJECTS ===== */
 
 .project-card {
-    background: #171a18;
-    border-left: 4px solid #49b675;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    transition: 0.2s;
+    background: #161b18;
+    border: 1px solid rgba(73,182,117,.15);
+    border-radius: 14px;
+    padding: 24px;
+    margin: 24px 0;
+    transition: all .25s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow:
+        0 8px 30px rgba(73,182,117,.08);
 }
 
 .project-card h3 {
@@ -113,6 +132,20 @@ a:hover {
     background: #171a18;
     padding: 20px;
     border-radius: 10px;
+}
+
+.tech-stack {
+    margin-top: 10px;
+}
+
+.tech-stack span {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 4px;
+    border-radius: 20px;
+    background: rgba(73,182,117,.15);
+    color: #69d28c;
+    font-size: .85rem;
 }
 
 /* ===== SEPARATORS ===== */
