@@ -1,5 +1,13 @@
-theme: minima
 title: Jose Ramon Jeronimo Liñan
 description: Computational Biology | Bioinformatics | Machine Learning
+
+theme: minima
+
+plugins:
+  - jekyll-feed
+
+header_pages:
+  - index.md
+
 author:
   name: Jose Ramon Jeronimo Liñan
