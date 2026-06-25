@@ -7,6 +7,10 @@ title: Home
 
 <div class="hero">
 
+<p class="hero-location">
+📍 Vienna, Austria
+</p>
+
   <!-- Uncomment when profile picture is added -->
 
   <!--
@@ -18,7 +22,7 @@ title: Home
   <h1>Jose Ramon Jeronimo Liñan</h1>
 
   <p class="tagline">
-    Computational Biology • Bioinformatics • Machine Learning
+    Bioprocess Development • Systems Biology • Bioinformatics
   </p>
 
   <p class="intro">
@@ -28,8 +32,11 @@ title: Home
     and AI applications in life sciences.
   </p>
 
+<a href="/assets/cv/Jose_Linan_CV.pdf" class="btn btn-primary">
+📄 Download CV
+</a>
+
   <div class="buttons">
-    <a href="/assets/cv/Jose_Linan_CV.pdf" class="btn">📄 Download CV</a>
     <a href="https://github.com/YOURUSERNAME" class="btn">GitHub</a>
     <a href="https://linkedin.com/in/YOURLINKEDIN" class="btn">LinkedIn</a>
     <a href="mailto:your.email@gmail.com" class="btn">Contact</a>
@@ -49,6 +56,16 @@ data analysis.
 </p>
 
 <hr>
+
+<h2>Current Focus</h2>
+
+<ul>
+<li>Genome-scale metabolic modelling of microbial communities</li>
+<li>Single-cell transcriptomics analysis with Scanpy</li>
+<li>Machine learning applications in biological datasets</li>
+<li>Developing reproducible computational workflows</li>
+</ul>
+
 
 <h2>Featured Projects</h2>
 
@@ -98,6 +115,12 @@ Feature selection and predictive modelling applied to genomic datasets.
 <hr>
 
 <h2>Skills</h2>
+
+<div class="tech-stack">
+<span>Python</span>
+<span>COBRApy</span>
+<span>MEMOTE</span>
+</div>
 
 <div class="skills-grid">
 
