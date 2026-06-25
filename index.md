@@ -3,6 +3,8 @@ layout: default
 title: Home
 ---
 
+<link rel="stylesheet" href="/assets/css/style.css">
+
 <div class="hero">
 
   <!-- Uncomment when profile picture is added -->
