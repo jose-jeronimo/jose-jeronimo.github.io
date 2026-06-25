@@ -1,3 +1,5 @@
+<!-- <img src="/assets/img/profile.jpg" width="220"> -->
+
 # Jose Ramon Jeronimo Liñan
 
 ## Computational Biology • Bioinformatics • Machine Learning
