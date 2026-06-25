@@ -27,6 +27,7 @@ title: Home
   </p>
 
   <div class="buttons">
+    <a href="/assets/cv/Jose_Linan_CV.pdf" class="btn">📄 Download CV</a>
     <a href="https://github.com/YOURUSERNAME" class="btn">GitHub</a>
     <a href="https://linkedin.com/in/YOURLINKEDIN" class="btn">LinkedIn</a>
     <a href="mailto:your.email@gmail.com" class="btn">Contact</a>
