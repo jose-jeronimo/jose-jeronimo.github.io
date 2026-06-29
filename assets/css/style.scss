@@ -12,6 +12,7 @@
     --hue: 155;
     --chroma-accent: 0.144;
     --chroma-surface: 0.004;
+    --hue-amber: 85;
 
     /* ── Derived tokens ── */
     --accent:        oklch(0.684 var(--chroma-accent) var(--hue));
@@ -22,7 +23,10 @@
     --background-0:  oklch(0.166 var(--chroma-surface) var(--hue));
     --background-100:oklch(0.196 var(--chroma-surface) var(--hue));
     --primary-text:  oklch(0.925 0 0);
-
+    --status-planned: oklch(0.5286 0 0);
+    --status-live:  oklch(0.5958 var(--chroma-accent) 155);
+    --status-progress: oklch(0.6414 0.1313 var(--hue-amber));
+    
         /* ── Scale source tokens ── */
     --base:  1rem;
     --ratio: 1.25;
@@ -81,6 +85,9 @@ a:hover {
     color: var(--accent-light);
 }
 
+section {
+    padding: var(--space-3xl) var(--space-md);
+}
 /* ===== HERO ===== */
 
 .hero {
@@ -114,6 +121,25 @@ a:hover {
     border: 4px solid var(--accent-light);
     margin-bottom: var(--space-lg);
 }
+
+/* ===== NAVIGATION TAB ===== */
+
+.site-nav  {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--card-bg);
+  padding: var(--space-sm) var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-nav a + a::before {
+  content: " | ";
+  color: var(--accent);
+}
+
 
 /* ===== BUTTONS ===== */
 
@@ -164,6 +190,32 @@ a:hover {
     color: var(--primary-text);
 }
 
+.pill {
+    padding: var(--space-xs) var(--space-sm);
+    margin: var(--space-xs);
+    border-radius: 6px;
+    font-size: var(--size-sm);
+    border: 1px solid color-mix(in oklch, var(--background-0) 15%, transparent);
+    display: inline-block;
+}
+
+.pill[data-status="live"]{
+    background: var(--status-live);
+    color: var(--background-0);
+    
+}
+
+.pill[data-status="progress"]{
+    background: var(--status-progress);
+    color: var(--background-0);
+}
+
+.pill[data-status="planned"]{
+    background: var(--status-planned);
+    color: var(--background-0);
+    
+}
+
 /* ===== SKILLS ===== */
 
 .skills-grid {
@@ -178,22 +230,29 @@ a:hover {
     border-radius: 20px;
 }
 
-.tech-stack {
-    margin-top: var(--space-sm);
-}
 
-.tech-stack span {
+.chip {
     display: inline-block;
     padding: var(--space-xs) var(--space-sm);
     margin: var(--space-xs);
     border-radius: 20px;
-    background: var(--card-bg);
+    background: var(--card-hover);
     color: var(--primary-text);
     font-size: var(--size-sm);
+    border: 1px solid color-mix(in oklch, var(--accent) 15%, transparent);
 }
 
 
 /* ===== MOBILE ===== */
+
+@media (prefers-reduced-motion: reduce) {
+    .project-card,
+    .btn {
+        transition: none;
+        transform: none;
+    }
+}
+
 
 @media (max-width: 768px) {
 
