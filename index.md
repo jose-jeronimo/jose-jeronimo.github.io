@@ -51,13 +51,17 @@ title: Home
   <h2>Projects</h2>
 
   <div class="project-card">
-  <h3>Genome-Scale Metabolic Modelling</h3>
-  <p>
-  Master's thesis project focused on computational modelling of microbial communities.
-  </p>
-  <p><strong>Status:</strong> Active Development</p>
-  <p><strong>Technologies:</strong> Python • COBRApy • MEMOTE</p>
+  <h3>gempipe</h3>
+  <p>Manually discovering where a metabolic pathway is broken is painful. Gempipe provides the reactions that are causing the model to fail, shortening the discovery time from hours of manual search to minutes of automatic computing</p>
+  <span class="pill" data-status="progress">In Progress</span>
+  <div class="chips">
+    <span class="chip">Python</span>
+    <span class="chip">COBRApy</span>
   </div>
+  <a href="#">View repo &rarr;</a>
+  </div>
+
+<!-- REST OF CARDS COMMENTED OUT
 
   <div class="project-card">
   <h3>Single-Cell Transcriptomics Analysis</h3>
@@ -77,7 +81,7 @@ title: Home
   <p><strong>Status:</strong> Active Development</p>
   <p><strong>Technologies:</strong> Python • scikit-learn • Pandas</p>
   </div>
-
+-->
   </section>
 
   <section id="skills">
@@ -86,53 +90,39 @@ title: Home
   <div class="skills-grid">
 
   <div class="skill-group">
-  <h3>Programming</h3>
-
-  <ul>
-  <li>Python</li>
-  <li>SQL</li>
-  <li>VBA</li>
-  <li>Linux</li>
-  </ul>
-
-  </div>
-
-  <div class="skill-group">
-  <h3>Bioprocess & Biological</h3>
-
-  <ul>
-  <li>Fermentation design and optimization</li>
-  <li>Formulation technology</li>
-  <li>Experiment Design</li>
-  <li>Batch data evaluation and trending</li>
-  <li>CPP investigation</li>
-  </ul>
-
-  </div>
-
-  <div class="skill-group">
   <h3>Python Tools</h3>
 
-  <span>pandas</span>
-  <span>numpy</span>
-  <span>matplotlib</span>
-  <span>seaborn</span>
-  <span>cobrapy</span>
-  <span>scanpy</span>
-  <span>scikit-learn</span>
-  <span>scipy</span>
-  <span>streamlit</span>
+  <span class="chip">pandas</span>
+  <span class="chip">numpy</span>
+  <span class="chip">matplotlib</span>
+  <span class="chip">seaborn</span>
+  <span class="chip">cobrapy</span>
+  <span class="chip">scanpy</span>
+  <span class="chip">scikit-learn</span>
+  <span class="chip">scipy</span>
+  <span class="chip">streamlit</span>
 
   </div>
 
   <div class="skill-group">
   <h3>Bash Tools</h3>
 
-  <span>gapseq</span>
-  <span>samtools</span>
-  <span>bowtie2</span>
-  <span>fastqc</span>
-  <span>fastp</span>
+  <span class="chip">gapseq</span>
+  <span class="chip">samtools</span>
+  <span class="chip">bowtie2</span>
+  <span class="chip">fastqc</span>
+  <span class="chip">fastp</span>
+
+  </div>
+
+  <div class="skill-group">
+  <h3>Languages</h3>
+
+  <ul>
+  <li>Python</li>
+  <li>SQL</li>
+  <li>VBA</li>
+  </ul>
 
   </div>
 
@@ -142,11 +132,11 @@ title: Home
 
 <section id="contact">
   <h2>Contact</h2>
-  <ul class="contact-list">
-    <li> <a href="mailto:your.email@gmail.com">your.email@gmail.com</a></li>
-    <li> <a href="https://linkedin.com/in/yourprofile">LinkedIn</a></li>
-    <li> <a href="https://github.com/yourusername">GitHub</a></li>
-  </ul>
+
+  <a class="btn btn-primary" href="mailto:your.email@gmail.com">Get in touch</a>
+  <a class="btn" href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+  <a class="btn" href="https://github.com/yourusername">GitHub</a>
+
 </section>
 
 </main>
