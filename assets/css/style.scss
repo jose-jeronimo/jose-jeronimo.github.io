@@ -5,61 +5,105 @@
 
 /* ===== GLOBAL ===== */
 
+
+
+:root {
+    /* ── Source tokens: change these to retheme everything ── */
+    --hue: 155;
+    --chroma-accent: 0.144;
+    --chroma-surface: 0.004;
+
+    /* ── Derived tokens ── */
+    --accent:        oklch(0.684 var(--chroma-accent) var(--hue));
+    --accent-light:  oklch(0.783 var(--chroma-accent) var(--hue));
+    --card-hover:    oklch(0.306 var(--chroma-surface) var(--hue));
+    --card-bg:       oklch(0.216 var(--chroma-surface) var(--hue));
+    --text-muted:    oklch(0.755 var(--chroma-surface) var(--hue));
+    --background-0:  oklch(0.166 var(--chroma-surface) var(--hue));
+    --background-100:oklch(0.196 var(--chroma-surface) var(--hue));
+    --primary-text:  oklch(0.925 0 0);
+
+        /* ── Scale source tokens ── */
+    --base:  1rem;
+    --ratio: 1.25;
+
+    /* ── Type scale ── */
+    --size-xs:   calc(var(--base) / var(--ratio) / var(--ratio));
+    --size-sm:   calc(var(--base) / var(--ratio));
+    --size-base: var(--base);
+    --size-md:   calc(var(--base) * var(--ratio));
+    --size-lg:   calc(var(--base) * var(--ratio) * var(--ratio));
+    --size-xl:   calc(var(--base) * var(--ratio) * var(--ratio) * var(--ratio));
+    --size-2xl:  calc(var(--base) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+
+    /* ── Spacing scale (same ratio, different semantic names) ── */
+    --space-xs:  calc(var(--base) / var(--ratio) / var(--ratio));
+    --space-sm:  calc(var(--base) / var(--ratio));
+    --space-md:  var(--base);
+    --space-lg:  calc(var(--base) * var(--ratio));
+    --space-xl:  calc(var(--base) * var(--ratio) * var(--ratio));
+    --space-2xl: calc(var(--base) * var(--ratio) * var(--ratio) * var(--ratio));
+    --space-3xl: calc(var(--base) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+
+    /* border-radius and border sizes are hardcoded as: 
+        - 6px on buttons: precise and technical
+        - 12 px on cards
+        - 20 px on skills grid
+        - 1px for general borders
+        - 4px for picture border
+    */
+}
+
+html {
+    font-size: 18px;
+}
+
 body {
     background: linear-gradient(
         180deg,
-        #0d0f0e 0%,
-        #111614 100%
+        var(--background-0) 0%,
+        var(--background-100) 100%
     );
 
-    color: #e6e6e6;
+    color: var(--primary-text);
 }
-
---accent: #3cb371;
---accent-light: #69d28c;
---card-bg: #161b18;
---text-muted: #a7b3ac;
 
 .page-content {
     max-width: 1050px;
     margin: auto;
+    padding: 0 var(--space-lg);
 }
 a {
-    color: #49b675;
+    color: var(--accent);
     text-decoration: none;
 }
 a:hover {
-    color: #6fd998;
+    color: var(--accent-light);
 }
 
 /* ===== HERO ===== */
 
 .hero {
     text-align: center;
-    padding: 60px 20px;
+    padding: var(--space-3xl) var(--space-md);
 }
 
-.hero-location {
-    color: #8fa89b;
-    font-size: 1rem;
-    margin-bottom: 20px;
-}
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    color: #49b675;
+    font-size: var(--size-2xl);
+    margin-bottom: var(--space-sm);
+    color: var(--accent);
 }
 
 .tagline {
-    font-size: 1.3rem;
-    color: #bdbdbd;
+    font-size: var(--size-lg);
+    color: var(--text-muted);
 }
 
 .intro {
     max-width: 800px;
-    margin: 30px auto;
-    font-size: 1.05rem;
+    margin: var(--space-lg) auto;
+    font-size: var(--size-md);
 }
 
 /* ===== PROFILE PIC ===== */
@@ -67,57 +111,57 @@ a:hover {
 .profile-pic {
     width: 220px;
     border-radius: 50%;
-    border: 4px solid #49b675;
-    margin-bottom: 30px;
+    border: 4px solid var(--accent-light);
+    margin-bottom: var(--space-lg);
 }
 
 /* ===== BUTTONS ===== */
 
 .buttons {
-    margin-top: 30px;
+    margin-top: var(--space-lg);
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 20px;
-    margin: 8px;
-    border: 1px solid #49b675;
-    border-radius: 8px;
-    color: #49b675;
+    padding: var(--space-xs) var(--space-sm);
+    margin: var(--space-xs);
+    border: 1px solid var(--accent-light);
+    border-radius: 6px;
+    color: var(--accent);
     transition: 0.25s;
 }
 
 .btn:hover {
-    background: #49b675;
-    color: #0f1110;
+    background: var(--accent-light);
+    color: var(--background-0);
 }
 
 .btn-primary {
-    background: #49b675;
-    color: #0f1110;
+    background: var(--accent);
+    color: var(--background-0);
     font-weight: 600;
 }
 
 /* ===== PROJECTS ===== */
 
 .project-card {
-    background: #161b18;
-    border: 1px solid rgba(73,182,117,.15);
-    border-radius: 14px;
-    padding: 24px;
-    margin: 24px 0;
+    background: var(--card-bg);
+    border: 1px solid color-mix(in oklch, var(--accent) 15%, transparent);
+    border-radius: 12px;
+    padding: var(--space-md);
+    margin: var(--space-md) 0;
     transition: all .25s ease;
 }
 
 .project-card:hover {
     transform: translateY(-3px);
-    box-shadow:
-        0 8px 30px rgba(73,182,117,.08);
+    background: var(--card-hover);
+    box-shadow: 0 var(--space-xs) var(--space-lg) color-mix(in oklch, var(--background-0) 60%, transparent);
 }
 
 .project-card h3 {
     margin-top: 0;
-    color: #49b675;
+    color: var(--primary-text);
 }
 
 /* ===== SKILLS ===== */
@@ -125,47 +169,41 @@ a:hover {
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    gap: var(--space-md);
 }
 
 .skills-grid div {
-    background: #171a18;
-    padding: 20px;
-    border-radius: 10px;
+    background: var(--card-bg);
+    padding: var(--space-md);
+    border-radius: 20px;
 }
 
 .tech-stack {
-    margin-top: 10px;
+    margin-top: var(--space-sm);
 }
 
 .tech-stack span {
     display: inline-block;
-    padding: 6px 12px;
-    margin: 4px;
+    padding: var(--space-xs) var(--space-sm);
+    margin: var(--space-xs);
     border-radius: 20px;
-    background: rgba(73,182,117,.15);
-    color: #69d28c;
-    font-size: .85rem;
+    background: var(--card-bg);
+    color: var(--primary-text);
+    font-size: var(--size-sm);
 }
 
-/* ===== SEPARATORS ===== */
-
-hr {
-    border: none;
-    border-top: 1px solid #2d2d2d;
-    margin: 50px 0;
-}
 
 /* ===== MOBILE ===== */
 
 @media (max-width: 768px) {
 
 .hero h1 {
-    font-size: 2rem;
+    font-size: var(--size-2xl);
 }
 
 .tagline {
-    font-size: 1rem;
+    font-size: var(--size-md);
 }
 
 }
+
