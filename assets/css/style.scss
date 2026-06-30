@@ -100,6 +100,7 @@ a:hover {
 
 section {
     padding: var(--space-3xl) var(--space-md);
+    scroll-margin-top: calc(var(--space-3xl) * 2);
 }
 /* ===== HERO ===== */
 
@@ -350,6 +351,85 @@ section {
     font-size: var(--size-lg);
 }
 
+/* ===== CONTACT MODAL ===== */
+
+.contact-box {
+    min-width: 340px;
+    width: 90vw;
+    max-width: 420px;
+    align-items: flex-start;
+    gap: var(--space-xs);
+}
+
+.contact-modal-sub {
+    font-size: var(--size-sm);
+    color: var(--text-muted);
+    margin: 0 0 var(--space-sm);
+}
+
+.contact-rows {
+    width: 100%;
+    border: 1px solid color-mix(in oklch, var(--accent) 12%, transparent);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    color: var(--primary-text);
+    transition: background 0.2s;
+    border-bottom: 1px solid color-mix(in oklch, var(--accent) 10%, transparent);
+    width: 100%;
+}
+.contact-row:last-child { border-bottom: none; }
+.contact-row:visited { color: var(--primary-text); }
+.contact-row:hover { background: var(--card-hover); color: var(--primary-text); }
+
+.contact-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: color-mix(in oklch, var(--accent) 12%, transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--accent);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+.contact-label {
+    font-size: var(--size-base);
+    font-weight: 600;
+    color: var(--primary-text);
+}
+.contact-handle {
+    font-size: var(--size-sm);
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contact-arrow {
+    color: var(--text-muted);
+    font-size: var(--size-md);
+    flex-shrink: 0;
+    transition: transform 0.2s, color 0.2s;
+}
+.contact-row:hover .contact-arrow {
+    transform: translateX(3px);
+    color: var(--accent);
+}
+
 /* ===== FOOTER ===== */
 
 .site-footer {
@@ -423,5 +503,3 @@ section {
 }
 
 }
-
-
