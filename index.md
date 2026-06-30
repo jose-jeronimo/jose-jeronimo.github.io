@@ -61,8 +61,7 @@ title: Home
   <details class="project-readme">
     <summary>Quick overview</summary>
     <div class="readme-body">
-      {% capture readme %}{% include_relative projects/thesis.md %}{% endcapture %}
-      {{ readme | markdownify }}
+      {% include_relative projects/thesis.md %}
     </div>
   </details>
   <div class="card-footer">
@@ -168,7 +167,3 @@ title: Home
   <span>&copy; 2025 Jose Ramon Jeronimo Liñan</span>
   <a class="footer-cv" href="/assets/cv/CV.pdf" download>Download CV &darr;</a>
 </footer>
-
-
-
-<footer></footer>
