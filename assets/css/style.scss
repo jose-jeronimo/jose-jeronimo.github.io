@@ -3,9 +3,12 @@
 
 @import "{{ site.theme }}";
 
+/* Suppress minima's built-in header (duplicate site-title + "Home" page-link) */
+.site-header {
+    display: none;
+}
+
 /* ===== GLOBAL ===== */
-
-
 
 :root {
     /* ── Source tokens: change these to retheme everything ── */
@@ -72,9 +75,14 @@ body {
     color: var(--primary-text);
 }
 
+/* .page-content is minima's <main>; .wrapper is the real width clamp (minima default: ~740px) */
 .page-content {
-    max-width: 1050px;
-    margin: auto;
+    padding: 0;
+}
+
+.wrapper {
+    max-width: 1150px;
+    margin: 0 auto;
     padding: 0 var(--space-lg);
 }
 a {
@@ -93,6 +101,11 @@ section {
 .hero {
     text-align: center;
     padding: var(--space-3xl) var(--space-md);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -136,16 +149,13 @@ section {
 }
 
 .site-nav a + a::before {
-  content: " | ";
+  content: "|";
+  margin: 0 var(--space-sm);
   color: var(--accent);
 }
 
 
 /* ===== BUTTONS ===== */
-
-.buttons {
-    margin-top: var(--space-lg);
-}
 
 .btn {
     display: inline-block;
@@ -177,6 +187,14 @@ section {
     padding: var(--space-md);
     margin: var(--space-md) 0;
     transition: all .25s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-footer {
+    margin-top: auto;
+    text-align: right;
+    padding-top: var(--space-sm);
 }
 
 .project-card:hover {
@@ -202,7 +220,6 @@ section {
 .pill[data-status="live"]{
     background: var(--status-live);
     color: var(--background-0);
-    
 }
 
 .pill[data-status="progress"]{
@@ -213,7 +230,6 @@ section {
 .pill[data-status="planned"]{
     background: var(--status-planned);
     color: var(--background-0);
-    
 }
 
 /* ===== SKILLS ===== */
@@ -243,6 +259,95 @@ section {
 }
 
 
+/* ===== PROJECT README EXPANDER ===== */
+
+.project-readme summary {
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: var(--size-sm);
+    margin-top: var(--space-sm);
+    list-style: none;
+}
+
+.project-readme summary::after {
+    content: " ↓";
+    font-size: var(--size-xs);
+}
+
+.project-readme[open] summary::after {
+    content: " ↑";
+}
+
+.readme-body {
+    margin-top: var(--space-sm);
+    font-size: var(--size-sm);
+    color: var(--text-muted);
+    border-top: 1px solid color-mix(in oklch, var(--accent) 10%, transparent);
+    padding-top: var(--space-sm);
+}
+
+/* ===== MODAL ===== */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: color-mix(in oklch, var(--background-0) 85%, transparent);
+    place-items: center;
+    z-index: 200;
+    backdrop-filter: blur(4px);
+}
+
+.modal-overlay:target {
+    display: grid;
+}
+
+.modal-box {
+    background: var(--card-bg);
+    border: 1px solid color-mix(in oklch, var(--accent) 20%, transparent);
+    border-radius: 12px;
+    padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    min-width: 280px;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-md);
+    color: var(--text-muted);
+    font-size: var(--size-lg);
+}
+
+/* ===== FOOTER ===== */
+
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-lg) var(--space-lg);
+    border-top: 1px solid color-mix(in oklch, var(--accent) 10%, transparent);
+    color: var(--text-muted);
+    font-size: var(--size-sm);
+}
+
+.footer-cv {
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    padding: var(--space-xs) var(--space-sm);
+    color: var(--accent);
+    transition: 0.25s;
+}
+
+.footer-cv:hover {
+    background: var(--accent);
+    color: var(--background-0);
+}
+
 /* ===== MOBILE ===== */
 
 @media (prefers-reduced-motion: reduce) {
@@ -256,13 +361,8 @@ section {
 
 @media (max-width: 768px) {
 
-.hero h1 {
-    font-size: var(--size-2xl);
-}
-
 .tagline {
     font-size: var(--size-md);
 }
 
 }
-
