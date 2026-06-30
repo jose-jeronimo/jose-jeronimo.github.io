@@ -359,17 +359,9 @@ section {
 
 .site-footer .wrapper {
     display: flex;
+    justify-content: center;
     align-items: center;
-}
-
-.site-footer .wrapper > span {
-    flex: 1;
-    text-align: right;
-    padding-right: var(--space-2xl);
-}
-
-.site-footer .wrapper > .footer-cv {
-    flex: 1;
+    gap: 20vw;
 }
 
 .footer-cv {
