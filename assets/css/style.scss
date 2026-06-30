@@ -152,7 +152,9 @@ section {
   background: var(--card-bg);
   border: 1px solid color-mix(in oklch, var(--accent) 30%, transparent);
   border-radius: 20px;
-  padding: var(--space-xs) var(--space-xl);
+  padding: 0.2rem var(--space-xl);
+  line-height: 1.4;
+  font-size: var(--size-sm);
 }
 
 .site-nav a + a::before {
@@ -357,9 +359,17 @@ section {
 
 .site-footer .wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 20vw;
+}
+
+.site-footer .wrapper > span {
+    flex: 1;
+    text-align: right;
+    padding-right: var(--space-2xl);
+}
+
+.site-footer .wrapper > .footer-cv {
+    flex: 1;
 }
 
 .footer-cv {
@@ -420,4 +430,5 @@ section {
 }
 
 }
+
 
