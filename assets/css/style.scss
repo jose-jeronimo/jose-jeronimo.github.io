@@ -117,7 +117,6 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
 
@@ -136,6 +135,7 @@ section {
     max-width: 800px;
     margin: var(--space-lg) auto;
     font-size: var(--size-md);
+    text-align: center;
 }
 
 /* ===== PROFILE PIC ===== */
