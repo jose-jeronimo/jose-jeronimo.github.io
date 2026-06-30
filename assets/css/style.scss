@@ -89,6 +89,9 @@ a {
     color: var(--accent);
     text-decoration: none;
 }
+a:visited {
+    color: var(--accent);
+}
 a:hover {
     color: var(--accent-light);
 }
@@ -102,6 +105,7 @@ section {
     text-align: center;
     padding: var(--space-3xl) var(--space-md);
     min-height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -167,6 +171,9 @@ section {
     transition: 0.25s;
 }
 
+.btn:visited {
+    color: var(--accent);
+}
 .btn:hover {
     background: var(--accent-light);
     color: var(--background-0);
@@ -176,6 +183,9 @@ section {
     background: var(--accent);
     color: var(--background-0);
     font-weight: 600;
+}
+.btn-primary:visited {
+    color: var(--background-0);
 }
 
 /* ===== PROJECTS ===== */
@@ -215,6 +225,7 @@ section {
     font-size: var(--size-sm);
     border: 1px solid color-mix(in oklch, var(--background-0) 15%, transparent);
     display: inline-block;
+    align-self: flex-start;
 }
 
 .pill[data-status="live"]{
@@ -321,6 +332,11 @@ section {
     right: var(--space-md);
     color: var(--text-muted);
     font-size: var(--size-lg);
+}
+
+/* Hide minima's auto-generated footer (ours is inside .wrapper) */
+body > footer {
+    display: none;
 }
 
 /* ===== FOOTER ===== */
