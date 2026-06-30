@@ -61,7 +61,7 @@ title: Home
   <details class="project-readme">
     <summary>Quick overview</summary>
     <div class="readme-body">
-      {% capture readme %}{% include_relative projects/gempipe_sum.md %}{% endcapture %}
+      {% capture readme %}{% include_relative projects/thesis.md %}{% endcapture %}
       {{ readme | markdownify }}
     </div>
   </details>
