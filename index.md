@@ -5,6 +5,13 @@ title: Home
 
 <link rel="stylesheet" href="/assets/css/style.css">
 
+<nav class="site-nav">
+  <a href="#bridge">Bridge</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+</nav>
+
 <header class="hero">
 
   <!-- Uncomment when profile picture is added -->
@@ -22,16 +29,9 @@ title: Home
   <p class="intro">
     As a bioprocess engineer, I bring the biological understanding behind the data — along with laboratory and industrial experience — to my computational biology work
   </p>
-  <a href="#contact">Get in touch</a>
+  <a class="btn btn-primary" href="#contact">Get in touch</a>
 
 </header>
-
-<nav class="site-nav">
-  <a href="#bridge">Bridge</a>
-  <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
-  <a href="#contact">Contact</a>
-</nav>
 
 <main>
 
@@ -42,7 +42,7 @@ title: Home
   <ul>
   <li>Experimental design experience that catches data quality problems before they reach the pipeline</li>
   <li>The biological grounding to interpret computational outputs in context — not just report them</li>
-  <li>Industrial and research exposure across  fermentation, microbial systems, and omics</li>
+  <li>Industrial and research exposure across fermentation, microbial systems, and omics</li>
   </ul>
   </section>
 
@@ -58,7 +58,16 @@ title: Home
     <span class="chip">Python</span>
     <span class="chip">COBRApy</span>
   </div>
-  <a href="#">View repo &rarr;</a>
+  <details class="project-readme">
+    <summary>Quick overview</summary>
+    <div class="readme-body">
+      {% capture readme %}{% include_relative projects/gempipe_sum.md %}{% endcapture %}
+      {{ readme | markdownify }}
+    </div>
+  </details>
+  <div class="card-footer">
+    <a href="#">View repo &rarr;</a>
+  </div>
   </div>
 
 <!-- REST OF CARDS COMMENTED OUT
@@ -90,16 +99,22 @@ title: Home
   <div class="skills-grid">
 
   <div class="skill-group">
-  <h3>Python Tools</h3>
+  <h3>Python &middot; Data</h3>
 
   <span class="chip">pandas</span>
   <span class="chip">numpy</span>
+  <span class="chip">scipy</span>
   <span class="chip">matplotlib</span>
   <span class="chip">seaborn</span>
+
+  </div>
+
+  <div class="skill-group">
+  <h3>Python &middot; ML &amp; Bio</h3>
+
+  <span class="chip">scikit-learn</span>
   <span class="chip">cobrapy</span>
   <span class="chip">scanpy</span>
-  <span class="chip">scikit-learn</span>
-  <span class="chip">scipy</span>
   <span class="chip">streamlit</span>
 
   </div>
@@ -130,15 +145,30 @@ title: Home
 
   </section>
 
+<!-- Contact trigger (keeps nav anchor working) -->
 <section id="contact">
   <h2>Contact</h2>
-
-  <a class="btn btn-primary" href="mailto:your.email@gmail.com">Get in touch</a>
-  <a class="btn" href="https://linkedin.com/in/yourprofile">LinkedIn</a>
-  <a class="btn" href="https://github.com/yourusername">GitHub</a>
-
+  <a class="btn btn-primary" href="#contact-modal">Get in touch</a>
 </section>
 
+<!-- Contact modal -->
+<div class="modal-overlay" id="contact-modal">
+  <div class="modal-box">
+    <a class="modal-close" href="#">✕</a>
+    <h3>Get in touch</h3>
+    <a class="btn btn-primary" href="mailto:biodatalab00@gmail.com">Email</a>
+    <a class="btn" href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+    <a class="btn" href="https://github.com/yourusername">GitHub</a>
+  </div>
+</div>
+
 </main>
+
+<footer class="site-footer">
+  <span>&copy; 2025 Jose Ramon Jeronimo Liñan</span>
+  <a class="footer-cv" href="/assets/cv/CV.pdf" download>Download CV &darr;</a>
+</footer>
+
+
 
 <footer></footer>
