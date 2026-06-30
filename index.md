@@ -198,3 +198,12 @@ title: Home
 </div>
 
 </main>
+
+<script>
+document.querySelectorAll('.modal-close').forEach(function(el){
+  el.addEventListener('click', function(e){
+    e.preventDefault();
+    history.pushState('', document.title, location.pathname);
+  });
+});
+</script>
