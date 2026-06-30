@@ -50,6 +50,8 @@ title: Home
   <section id="projects">
   <h2>Projects</h2>
 
+  <div class="cards-grid">
+
   <div class="project-card">
   <h3>gempipe</h3>
   <p>Manually discovering where a metabolic pathway is broken is painful. Gempipe provides the reactions that are causing the model to fail, shortening the discovery time from hours of manual search to minutes of automatic computing</p>
@@ -58,38 +60,61 @@ title: Home
     <span class="chip">Python</span>
     <span class="chip">COBRApy</span>
   </div>
-  <details class="project-readme">
-    <summary>Quick overview</summary>
-    <div class="readme-body">
-      {% include_relative projects/thesis.md %}
-    </div>
-  </details>
+  <a class="overview-link" href="#gempipe-overview">Quick overview &#x2193;</a>
   <div class="card-footer">
     <a href="#">View repo &rarr;</a>
   </div>
   </div>
 
 <!-- REST OF CARDS COMMENTED OUT
+  Pattern for each new card:
+
+  <div class="project-card">
+  <h3>Project Name</h3>
+  <p>One-sentence description</p>
+  <span class="pill" data-status="live|progress|planned">Status</span>
+  <div class="chips">
+    <span class="chip">Tool</span>
+  </div>
+  <a class="overview-link" href="#project-name-overview">Quick overview &#x2193;</a>
+  <div class="card-footer">
+    <a href="https://github.com/...">View repo &rarr;</a>
+  </div>
+  </div>
 
   <div class="project-card">
   <h3>Single-Cell Transcriptomics Analysis</h3>
-  <p>
-  Single-cell RNA sequencing analysis using Scanpy, including QC,
-  clustering and cell-type annotation.
-  </p>
-  <p><strong>Status:</strong> Repository under preparation</p>
-  <p><strong>Technologies:</strong> Python • Scanpy • AnnData</p>
+  <p>Single-cell RNA sequencing analysis using Scanpy, including QC, clustering and cell-type annotation.</p>
+  <span class="pill" data-status="planned">Planned</span>
+  <div class="chips">
+    <span class="chip">Python</span>
+    <span class="chip">Scanpy</span>
+    <span class="chip">AnnData</span>
+  </div>
+  <a class="overview-link" href="#scanpy-overview">Quick overview &#x2193;</a>
+  <div class="card-footer">
+    <a href="#">View repo &rarr;</a>
+  </div>
   </div>
 
   <div class="project-card">
   <h3>Machine Learning for Biological Data</h3>
-  <p>
-  Feature selection and predictive modelling applied to genomic datasets.
-  </p>
-  <p><strong>Status:</strong> Active Development</p>
-  <p><strong>Technologies:</strong> Python • scikit-learn • Pandas</p>
+  <p>Feature selection and predictive modelling applied to genomic datasets.</p>
+  <span class="pill" data-status="progress">In Progress</span>
+  <div class="chips">
+    <span class="chip">Python</span>
+    <span class="chip">scikit-learn</span>
+    <span class="chip">Pandas</span>
+  </div>
+  <a class="overview-link" href="#ml-bio-overview">Quick overview &#x2193;</a>
+  <div class="card-footer">
+    <a href="#">View repo &rarr;</a>
+  </div>
   </div>
 -->
+
+  </div>
+
   </section>
 
   <section id="skills">
@@ -144,16 +169,16 @@ title: Home
 
   </section>
 
-<!-- Contact trigger (keeps nav anchor working) -->
 <section id="contact">
   <h2>Contact</h2>
+  <p class="contact-invite">Open to roles in computational biology, bioinformatics, and research.</p>
   <a class="btn btn-primary" href="#contact-modal">Get in touch</a>
 </section>
 
 <!-- Contact modal -->
 <div class="modal-overlay" id="contact-modal">
   <div class="modal-box">
-    <a class="modal-close" href="#">✕</a>
+    <a class="modal-close" href="#">&#x2715;</a>
     <h3>Get in touch</h3>
     <a class="btn btn-primary" href="mailto:biodatalab00@gmail.com">Email</a>
     <a class="btn" href="https://linkedin.com/in/yourprofile">LinkedIn</a>
@@ -161,9 +186,15 @@ title: Home
   </div>
 </div>
 
-</main>
+<!-- Project summary modals — add one per card -->
+<div class="modal-overlay" id="gempipe-overview">
+  <div class="modal-box summary-box">
+    <a class="modal-close" href="#">&#x2715;</a>
+    <h3>gempipe</h3>
+    <div class="summary-content">
+      {% include_relative projects/gempipe_sum.md %}
+    </div>
+  </div>
+</div>
 
-<footer class="site-footer">
-  <span>&copy; 2025 Jose Ramon Jeronimo Liñan</span>
-  <a class="footer-cv" href="/assets/cv/CV.pdf" download>Download CV &darr;</a>
-</footer>
+</main>
