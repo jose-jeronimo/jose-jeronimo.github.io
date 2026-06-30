@@ -145,6 +145,8 @@ section {
   position: sticky;
   top: var(--space-sm);
   z-index: 100;
+  float: none;
+  display: block;
   width: fit-content;
   margin: 0 auto;
   background: var(--card-bg);
@@ -192,8 +194,8 @@ section {
 /* ===== PROJECTS ===== */
 
 .cards-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: var(--space-md);
 }
 
@@ -206,6 +208,8 @@ section {
     transition: all .25s ease;
     display: flex;
     flex-direction: column;
+    flex: 0 1 calc(50% - var(--space-md) / 2);
+    min-width: 0;
 }
 
 .overview-link {
@@ -353,8 +357,9 @@ section {
 
 .site-footer .wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 20vw;
 }
 
 .footer-cv {
@@ -373,15 +378,28 @@ section {
 /* ===== CONTACT CTA ===== */
 
 #contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     background: var(--card-bg);
     border-top: 1px solid color-mix(in oklch, var(--accent) 10%, transparent);
 }
 
+#contact h2 {
+    color: var(--accent);
+    font-size: var(--size-xl);
+}
+
 .contact-invite {
     color: var(--text-muted);
     max-width: 500px;
-    margin: var(--space-sm) auto var(--space-lg);
+    margin: var(--space-sm) 0 var(--space-xl);
+}
+
+#contact .btn-primary {
+    padding: var(--space-sm) var(--space-2xl);
+    font-size: var(--size-md);
 }
 
 /* ===== MOBILE ===== */
@@ -402,3 +420,4 @@ section {
 }
 
 }
+
