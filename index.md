@@ -60,7 +60,7 @@ title: Home
     <span class="chip">Python</span>
     <span class="chip">COBRApy</span>
   </div>
-  <a class="overview-link" href="#gempipe-overview">Quick overview &#x2193;</a>
+  <a class="overview-link" href="#" data-open-modal="gempipe-overview">Quick overview &#x2193;</a>
   <div class="card-footer">
     <a href="#">View repo &rarr;</a>
   </div>
@@ -172,7 +172,7 @@ title: Home
 <section id="contact">
   <h2>Contact</h2>
   <p class="contact-invite">Open to roles in computational biology, bioinformatics, and research.</p>
-  <a class="btn btn-primary" href="#contact-modal">Get in touch</a>
+  <a class="btn btn-primary" href="#" data-open-modal="contact-modal">Get in touch</a>
 </section>
 
 <!-- Contact modal -->
@@ -200,10 +200,21 @@ title: Home
 </main>
 
 <script>
+document.querySelectorAll('[data-open-modal]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    document.getElementById(a.dataset.openModal).classList.add('is-open');
+  });
+});
 document.querySelectorAll('.modal-close').forEach(function(el){
   el.addEventListener('click', function(e){
     e.preventDefault();
-    history.pushState('', document.title, location.pathname);
+    el.closest('.modal-overlay').classList.remove('is-open');
+  });
+});
+document.querySelectorAll('.modal-overlay').forEach(function(overlay){
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) overlay.classList.remove('is-open');
   });
 });
 </script>
